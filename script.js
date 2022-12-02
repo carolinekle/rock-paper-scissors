@@ -10,6 +10,24 @@ function getComputerChoice() {
 console.log(getComputerChoice());
 
 const playerSelection = prompt("Pick rock, paper, or scissors");
+const computerSelection = getComputerChoice();
+
+console.log(computerSelection);
+
+function playRound(computerSelection){
+    playerSelection.toLowerCase() + computerSelection.toLowerCase()
+    const result = playerSelection + computerSelection;
+    console.log(result);
+    console.log(computerSelection);
+}
+console.log(playerSelection.toLowerCase())
+console.log(computerSelection.toLowerCase())
+
+const result = playerSelection + computerSelection;
+console.log(result);
+
+/*
+this shit does not work for some reason 
 
 function game(playerSelection){
 
@@ -34,4 +52,4 @@ function game(playerSelection){
             console.log("a tie!!");
             break;
 }
-}
+}*/
