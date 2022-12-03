@@ -1,6 +1,6 @@
 function getComputerChoice() {
 
-    const choices = ['Rock', 'Paper', 'Scissors'];
+    const choices = ['rock', 'paper', 'scissors'];
      
     const randomNumber = (Math.floor(Math.random() * choices.length));
    
@@ -8,26 +8,49 @@ function getComputerChoice() {
 
 }
 console.log(getComputerChoice());
+//all trash. something about redefining getComputerChoice keeps changing the result. better
+//just use if statements
+const playerInput = prompt("Pick rock, paper, or scissors");
+const playerSelection = playerInput.toLowerCase();
+const computerChoice = getComputerChoice();
+console.log(computerChoice);
+const gameOdds = playerSelection + computerChoice;
+console.log(gameOdds);
 
-const playerSelection = prompt("Pick rock, paper, or scissors");
-const computerSelection = getComputerChoice();
+function playRound(gameOdds){
 
-console.log(computerSelection);
+    console.log(gameOdds);
+    switch(gameOdds){
+        case "rockscissors":
+        case "scissorspaper":
+        case "paperrock":
+            console.log(won);
+            break;
+        case "rockpaper":
+        case "paperscissors":
+        case "scissorsrock":
+            print("the puter won :/")
+            break;
+        case "rockrock":
+        case "paperpaper":
+        case "scissorsscissors":
+            print('a tie!!');
+            break;
+        default: console.log("oops... something went wrong");
 
-function playRound(computerSelection){
-    playerSelection.toLowerCase() + computerSelection.toLowerCase()
-    const result = playerSelection + computerSelection;
-    console.log(result);
-    console.log(computerSelection);
 }
-console.log(playerSelection.toLowerCase())
-console.log(computerSelection.toLowerCase())
+return gameOdds;
+}
 
-const result = playerSelection + computerSelection;
-console.log(result);
+console.log(gameOdds);
+
+
 
 /*
 this shit does not work for some reason 
+
+function playRound(playerComputer){
+
 
 function game(playerSelection){
 
@@ -35,21 +58,6 @@ function game(playerSelection){
 
     console.log(computerSelection);
 
-    switch(playerSelection.toLowerCase() + computerSelection.toLowerCase()){
-        case "rockscissors":
-        case "scissorspaper":
-        case "paperrock":
-            console.log("you won!");
-            break;
-        case "rockpaper":
-        case "paperscissors":
-        case "scissorsrock":
-            console.log("the puter won :/")
-            break;
-        case "rockrock":
-        case "paperpaper":
-        case "scissorsscissors":
-            console.log("a tie!!");
-            break;
+
 }
 }*/
