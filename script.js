@@ -1,63 +1,38 @@
+const playerInput = prompt("Pick rock, paper, or scissors");
+const playerChoice = playerInput.toLowerCase();
+let computerChoice = getComputerChoice();
+
 function getComputerChoice() {
 
     const choices = ['rock', 'paper', 'scissors'];
-     
-    const randomNumber = (Math.floor(Math.random() * choices.length));
    
-    return choices[randomNumber];
+    return choices[Math.floor(Math.random() * choices.length)];
 
 }
-console.log(getComputerChoice());
-//all trash. something about redefining getComputerChoice keeps changing the result. better
-//just use if statements
-const playerInput = prompt("Pick rock, paper, or scissors");
-const playerSelection = playerInput.toLowerCase();
-const computerChoice = getComputerChoice();
-console.log(computerChoice);
-const gameOdds = playerSelection + computerChoice;
-console.log(gameOdds);
 
-function playRound(gameOdds){
+function playRound(computerChoice, playerChoice){
+    
+        if ((playerChoice == 'rock' && computerChoice == 'scissors') 
+        || (playerChoice == 'scissors' && computerChoice  == 'paper') 
+        || (playerChoice == 'paper' && computerChoice  == 'rock')) {
+            
+            console.log("You win!");
+            
+        } else if (playerChoice== computerChoice) {
+            console.log("It's a tie.");
+        } else {
+        
+            console.log("You lose!");
+            
+            }
+        }
 
-    console.log(gameOdds);
-    switch(gameOdds){
-        case "rockscissors":
-        case "scissorspaper":
-        case "paperrock":
-            console.log(won);
-            break;
-        case "rockpaper":
-        case "paperscissors":
-        case "scissorsrock":
-            print("the puter won :/")
-            break;
-        case "rockrock":
-        case "paperpaper":
-        case "scissorsscissors":
-            print('a tie!!');
-            break;
-        default: console.log("oops... something went wrong");
-
-}
-return gameOdds;
+function game(){
+    for (let i = 0; i < 5; i++){
+        let playerInput = prompt("Pick rock, paper, or scissors");
+        let playerChoice = playerInput.toLowerCase();
+        playRound(computerChoice, playerChoice);
+    }
 }
 
-console.log(gameOdds);
-
-
-
-/*
-this shit does not work for some reason 
-
-function playRound(playerComputer){
-
-
-function game(playerSelection){
-
-    const computerSelection = getComputerChoice();
-
-    console.log(computerSelection);
-
-
-}
-}*/
+game(computerChoice, playerChoice);
